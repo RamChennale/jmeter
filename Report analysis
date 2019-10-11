@@ -1,0 +1,27 @@
+Let’s find how to calculate the Throughput:
+
+Add Summary Report to the Thread Group/Request you are sending. There you can get the above report .
+Throughput = 1/[Total Time]
+Where Total time = [Avg bites] * [1/(KB/Sec)]
+Where using [1/(KB/Sec)] we are getting the Time consumed in Sec. For 1 KB of data .
+Then simply for one sample i.e Avg bites of that sample = [Avg bites] * [1/(KB/Sec)]
+So Throughput is for one sample = 1/[{Avg bites} * {1/(KB/Sec)}]
+Eg :
+Throughput = 1/[Total Time]
+Total time = (6.041 KB) * [1/90] =0.0671 sec
+Then Throughput = 1/ 0.0671 = 14.9031297/Sec
+Now to decide who is faulty :
+Response time is the value counted just before the request is being sent till the whole the last byte of response is produced .
+Here Throughput is the measure for the Sever performance .
+Case 1 : When we find a scenario where the Response time for the request is high but the Throughput is much lower. 
+This signifies that the Server is not capable enough to sustain/execute the request . Which ask for the tuning in the server side.
+Case 2 : When the Response time is high but Throughput in comparison to the Response time is much higher .
+ This implies that the request is taking more time because of fault in the application. We should not blame the server processing time for 
+ this. Now it’s time to consider other factors and tune them to make the application performance better.
+   
+   #Satisfied count
+   #Tolerating count
+
+1. Satisfied count: Satisfied count is the Number of requests for which response time is lower than "Toleration threshold" 
+2. Tolerating count: Tolerating count is the Number of requests for which response time is higher than Toleration threshold but lower than 
+"Frustration threshold"
