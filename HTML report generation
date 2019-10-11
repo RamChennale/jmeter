@@ -1,0 +1,19 @@
+To generate a HTML report in Jmeter through  command prompt command is: 
+=======================================
+To create report at the end of the test 
+=======================================
+jmeter -n -t “location of the jmeter script” -l “location of result file” -e -o “location of the output folder” 
+
+=======================================
+create report from a standalone csv file
+=======================================
+jmeter -g “location of csv file” -o “location of output folder” 
+
+=======================================
+Analyse HTML (Dashboard) Reports
+=======================================
+Example : 
+
+c:\jmeter\bin>jmeter -n -t /Users/ramchennale/Desktop/PT/AddItemAMS/AMSAddItem10Users.jmx -l /Users/ramchennale/Desktop/PT/AddItemAMS/AMSAddItem10Users.csv -e -o /Users/ramchennale/Desktop/PT/AddItemAMS/HTML_ReportAMSAddItem10Users
+
+c:\jmeter\bin>jmeter -n -t D:/apache-jmeter-5.1.1/lotusTests/EBiz10usersAddItem.jmx -l D:/apache-jmeter-5.1.1/lotusTests/EBiz10usersAddItem.csv -e -o D:/apache-jmeter-5.1.1/lotusTests/HTMLReportEBiz10usersAddItem
